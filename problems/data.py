@@ -1,0 +1,11 @@
+import pandas as pd
+import numpy as np
+exam_data={'name':['anastasia','dima','katherine','james','emily','michael','mthew','laura','kevin','jonas'],
+           'score':[12.5,9,16.5,np.nan,9,20,14.5,np.nan,8,19],
+           'attempts':[1,3,2,3,2,3,1,1,2,1],
+           'qualify':['yes','no','yes','no','no','yes','yes','no','no','yes']}
+df=pd.DataFrame(exam_data)
+attempt=df[df['attempts']>2]
+score=df[df['score'].between(15,20)]
+qualify=df[df['qualify']=='yes']
+print(qualify)
